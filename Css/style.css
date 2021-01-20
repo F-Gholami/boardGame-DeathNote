@@ -1,0 +1,542 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0%;
+  background-color: black;
+}
+
+#openingModal {
+  display: block;
+  position: fixed;
+  color: aliceblue;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#openingModal-content {
+  background-image: url(../../App/Images/Death\ Note/modal-background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 98%;
+  height: 95%;
+  margin: 1% auto;
+  padding: 10px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5), 0 7px 20px rgba(0, 0, 0, 0.4);
+  /* for animation we give it a name here and then add some keyframes */
+  animation-name: modalopen;
+  animation-duration: 3s;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#openingModal-content p,
+h4,
+ul,
+dl {
+  padding: 10px 250px;
+  margin: 0;
+  text-align: justify;
+  font-family: "Grenze", serif;
+  font-size: 28px;
+}
+
+#startGame {
+  float: right;
+  margin-right: 300px;
+  padding: 15px;
+  font-family: "Grenze", serif;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: yellowgreen;
+  border: black;
+  border-radius: 20px;
+}
+
+#startGame:hover {
+  color: brown;
+}
+
+#volumIcon {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 30px;
+  color: #fbaff0;
+}
+
+#volumIcon:hover {
+  cursor: pointer;
+  color: #8b01ce;
+}
+
+.gameBoard {
+  padding: 16px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(10, 70px);
+  grid-template-rows: repeat(10, 70px);
+}
+.cell {
+  background-color: #fbaff0;
+  margin: 1px;
+  border: 2px solid #8b01ce;
+  border-radius: 5%;
+  box-shadow: 0 10px 50px rgba(113, 10, 160, 0.877),
+    0 7px 20px rgba(97, 10, 155, 0.3);
+}
+
+.obstacle {
+  background-image: url(../../App/Images/Death\ Note/ryuk-dark2.jpeg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: 2px solid black;
+}
+
+.apple {
+  background-image: url(../../App/Images/Death\ Note/APPLE.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: 1px;
+}
+.cake {
+  background-image: url(../../App/Images/Death\ Note/white.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: 1px;
+}
+
+.player1 {
+  height: 400px;
+  margin-top: 50px;
+  background-image: url(../../App/Images/Death\ Note/kira2.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+}
+
+.player2 {
+  background-image: url(../../App/Images/Death\ Note/L1Copy.png);
+  height: 400px;
+  margin-top: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+.playerOnePosition {
+  background-image: url(../../App/Images/Death\ Note/kira.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 1px;
+}
+.playerTwoPosition {
+  background-image: url(../../App/Images/Death\ Note/L.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 2px;
+}
+
+.pathHighlight {
+  border: 5px solid orangered;
+  border-radius: 20%;
+}
+
+.weapon4 {
+  background-image: url(../../App/Images/Death\ Note/death-note-notebook4.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin: 1px;
+}
+.weapon3 {
+  background-image: url(../../App/Images/Death\ Note/Ryuk1.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.weapon2 {
+  background-image: url(../../App/Images/Death\ Note/Rem.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.weapon1 {
+  background-image: url(../../App/Images/Death\ Note/Shinigami-sidoh.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Attak Page */
+#Kira {
+  color: aliceblue;
+  text-align: center;
+  font-family: "Lobster", cursive;
+  font-size: 50px;
+  color: red;
+  float: left;
+}
+
+#L {
+  color: aliceblue;
+  text-align: center;
+  font-family: "Lobster", cursive;
+  font-size: 50px;
+  color: blue;
+  float: right;
+}
+
+.player1Battle {
+  background-image: url(../../App/Images/Death\ Note/kiraBattle.jpg);
+  height: 300px;
+  width: 220px;
+  margin-top: 80px;
+  margin-left: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  float: left;
+  border: solid red;
+  border-radius: 10%;
+}
+
+.player2Battle {
+  background-image: url(../../App/Images/Death\ Note/LBattle.jpg);
+  height: 300px;
+  width: 220px;
+  margin-top: 80px;
+  margin-right: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  float: right;
+  border: solid blue;
+  border-radius: 10%;
+}
+
+#kiraHealth {
+  color: ivory;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 300px;
+}
+#kiraWeapon {
+  color: ivory;
+  text-align: center;
+  font-size: 20px;
+}
+#lHealth {
+  color: ivory;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 300px;
+}
+#lWeapon {
+  color: ivory;
+  text-align: center;
+  font-size: 20px;
+}
+
+.countHealthPlayer1 {
+  color: green;
+  font-family: "Lobster", cursive;
+  font-size: 36px;
+}
+.countHealthPlayer2 {
+  color: greenyellow;
+  font-family: "Lobster", cursive;
+  font-size: 36px;
+}
+
+/*health bar*/
+.progress-bar {
+  position: relative;
+  width: 200px;
+  height: 20px;
+  border: 1px solid green;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: green;
+  transition: width 0.5s;
+}
+
+.progress-bar-value {
+  /* considering absolute is gonna give it the possibility to float above the nearest parent*/
+  position: absolute;
+  /*it takes 100% of the height and width of the parent*/
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /*vertically align*/
+  align-items: center;
+  /*horitzontaly align*/
+  justify-content: center;
+  font-weight: bold;
+}
+
+.whichWeaponPlayer1 {
+  font-family: "Lobster", cursive;
+  font-size: 30px;
+  color: #8b01ce;
+}
+.whichWeaponPlayer2 {
+  font-family: "Lobster", cursive;
+  font-size: 30px;
+  color: #8b01ce;
+}
+
+.damagePlayer2 {
+  font-family: "Lobster", cursive;
+  font-size: 20px;
+  color: #fbaff0;
+}
+
+#attackButton1 {
+  font-family: "Lobster", cursive;
+  font-size: 30px;
+  margin-top: 20px;
+  background-color: red;
+  padding: 7px;
+}
+#attackButton2 {
+  font-family: "Lobster", cursive;
+  font-size: 30px;
+  margin-top: 20px;
+  background-color: red;
+  padding: 7px;
+}
+
+#defendButton1 {
+  font-family: "Lobster", cursive;
+  font-size: 30px;
+  margin-top: 20px;
+  background-color: green;
+  padding: 7px;
+  /* margin-left: 8px; */
+  float: right;
+}
+#defendButton2 {
+  font-family: "Lobster", cursive;
+  font-size: 30px;
+  margin-top: 20px;
+  background-color: green;
+  padding: 7px;
+  /* margin-left: 8px; */
+  float: right;
+}
+
+#battleModal {
+  display: none;
+  position: fixed;
+  color: aliceblue;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.battleInterface {
+  width: 98%;
+  height: 95%;
+  margin: 1% auto;
+  animation-name: battleModaodalopen;
+  animation-duration: 5s;
+}
+
+@keyframes battleModaodalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*Player1 wins Modal*/
+#player1WinsModal {
+  display: none;
+  position: fixed;
+  color: aliceblue;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.player1WinsInterface {
+  width: 98%;
+  height: 95%;
+  margin: 1% auto;
+  animation-name: player11WinsModaodalopen;
+  animation-duration: 5s;
+}
+
+@keyframes player11WinsModaodalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.player1Wins {
+  background-image: url(../../App/Images/Death\ Note/kiraBattle.jpg);
+  height: 300px;
+  width: 200px;
+  margin-top: 100px;
+  margin-left: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  float: left;
+  border: solid red;
+  border-radius: 10%;
+}
+.player1WinsText {
+  float: right;
+  margin-top: 100px;
+}
+
+.player1WinsText h1,
+h3 {
+  font-family: "Lobster", cursive;
+  font-size: 65px;
+  text-align: center;
+}
+
+.blinkingText1 {
+  animation: blinkingText1 1.2s infinite;
+}
+
+@keyframes blinkingText1 {
+  0% {
+    color: red;
+  }
+  49% {
+    color: red;
+  }
+  60% {
+    color: transparent;
+  }
+  99% {
+    color: transparent;
+  }
+  100% {
+    color: red;
+  }
+}
+
+/*Player2 wins Modal*/
+#player2WinsModal {
+  display: none;
+  position: fixed;
+  color: aliceblue;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.player2WinsInterface {
+  width: 98%;
+  height: 95%;
+  margin: 1% auto;
+  animation-name: player11WinsModaodalopen;
+  animation-duration: 5s;
+}
+
+@keyframes player11WinsModaodalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.player2Wins {
+  background-image: url(../../App/Images/Death\ Note/LBattle.jpg);
+  height: 300px;
+  width: 200px;
+  margin-top: 100px;
+  margin-right: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  float: right;
+  border: solid blue;
+  border-radius: 10%;
+}
+.player2WinsText {
+  float: left;
+  margin-top: 100px;
+}
+
+.player2WinsText h1,
+h3 {
+  font-family: "Lobster", cursive;
+  font-size: 65px;
+  text-align: center;
+}
+
+.blinkingText2 {
+  animation: blinkingText2 1.2s infinite;
+}
+/*use fade out and fade in */
+@keyframes blinkingText2 {
+  0% {
+    color: blue;
+  }
+  49% {
+    color: blue;
+  }
+  60% {
+    color: transparent;
+  }
+  99% {
+    color: transparent;
+  }
+  100% {
+    color: blue;
+  }
+}
+.playAgain {
+  font-family: "Lobster", cursive;
+  font-size: 30px;
+  margin-top: 30px;
+  margin-left: 150px;
+  background-color: green;
+  padding: 10px;
+  text-align: center;
+}
