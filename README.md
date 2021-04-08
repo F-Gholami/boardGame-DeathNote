@@ -26,4 +26,4 @@ The characters and weapons are based on an anime called **Death Note** which was
 
 The story follows *Light Yagami* who attempts to use the Death Note to carry out a world-wide massacre of individuals whom he deems morally unworthy of life to change the world into a utopian society without crime, using the alias of a God-like vigilante named **Kira** and the subsequent efforts of an elite task-force of law enforcement officers, consisting of members of the Japanese police force, led by **L**, an enigmatic international detective whose past is shrouded in mystery, to apprehend him and end his reign of terror.
 
-*Having Cakes and Apples for increasing the score of health for each player was not part of the brief, but I added as a challenge to my own version of the game*
+*...Having Cakes and Apples for increasing the score of health for each player was not part of the brief, but I added as a challenge to my own version of the game...*
